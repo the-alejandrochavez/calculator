@@ -51,6 +51,7 @@
     border: 0;
     background-color: #333333;
     color: white;
+    transition: transform 0.2s ease;
 }
 
 .clear {
@@ -63,4 +64,8 @@
 
 .equal {
     background-color: limegreen;
+}
+
+.button:hover {
+    transform: scale(0.8);
 }
