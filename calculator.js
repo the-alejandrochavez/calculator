@@ -18,6 +18,8 @@ function handleClick(e) {
                 firstValue = null;
                 operator = null;
                 display.value = "";
+                break;
+
             case "←":
                 if (currentValue.length === 1) {
                     currentValue = "";
@@ -25,6 +27,44 @@ function handleClick(e) {
                 }
                 currentValue = currentValue.substring(0, currentValue.length - 1);
                 display.value = currentValue;
+                break;
+
+            case "×":
+            case "÷":
+            case "+":
+            case "−":
+                if (currentValue !== "") {
+                    if (firstValue === null) {
+                        firstValue = parseInt(currentValue);
+                        operator = input;
+                        currentValue = "";
+                    }
+                }
+                break;
+
+            case "=":
+                if (currentValue !== "" && firstValue !== null && operator !== null) {
+                    const secondValue = parseInt(currentValue);
+                    let result;
+                    switch (operator) {
+                        case "×":
+                            result = firstValue * secondValue;
+                            break;
+                        case "÷":
+                            result = firstValue / secondValue;
+                            break;
+                        case "+":
+                            result = firstValue + secondValue;
+                            break;
+                        case "−":
+                            result = firstValue - secondValue;
+                            break;
+                    }
+                    display.value = result;
+                    firstValue = result;
+                    operator = null;
+                    currentValue = "";
+                }
         }
     }
 
