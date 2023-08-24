@@ -61,9 +61,9 @@ function handleClick(e) {
                             break;
                     }
                     display.value = result;
-                    firstValue = result;
+                    firstValue = null;
                     operator = null;
-                    currentValue = "";
+                    currentValue = display.value;
                 }
         }
     }
