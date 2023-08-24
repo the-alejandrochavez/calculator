@@ -5,7 +5,7 @@
 }
 
 .container {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@
 
 .calculator {
     display: grid;
-    height: 50vh;
+    height: 25em;
     width: 300px;
     grid-template-rows: 20% 80%;
 }
